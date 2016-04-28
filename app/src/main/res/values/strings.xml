@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Quarantine</string>
+
+    <!-- Welcome Activity -->
+    <string name="Quarantine">Quarantine</string>
+    <string name="play_now">Play Now!</string>
+    <string name="let_us_begin">Let us begin!</string>
+    <string name="join_or_create">Would you like to join a game or create a new game?</string>
+    <string name="join_game">Join Game</string>
+    <string name="create_game">Create Game</string>
+    <string name="name_prompt">What is your name?</string>
+    <string name="but_first">But first...</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="ip_address">IP Address</string>
+    <string name="ip_to_join">What is the IP address of the game you want to join?</string>
+    <string name="join">Join</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
