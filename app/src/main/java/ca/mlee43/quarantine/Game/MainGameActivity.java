@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import ca.mlee43.quarantine.R;
 
@@ -33,17 +34,26 @@ public class MainGameActivity extends Activity implements WelcomeFragment.Welcom
     }
 
     @Override
-    public void onEnterLobby() {
-        // TODO: 16-04-28 Switch to the lobby screen 
-    }
-
-    @Override
     public void onCreateLobby(String name) {
-        // TODO: 16-04-28 Start server 
+        // TODO: 16-04-28 Start server
+        enterLobby(name);
     }
 
     @Override
     public void onJoin(String ip, String name) {
         // TODO: 16-04-28 Establish connection with existing game
+        enterLobby(name);
+    }
+
+    public void enterLobby(String name) {
+        // Create and attach LobbyFragment
+        LobbyFragment lobbyFragment = new LobbyFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container_maingame, lobbyFragment,
+                LobbyFragment.TAG_LOBBY_FRAGMENT);
+        fragmentTransaction.commit();
+
+        Toast.makeText(this, "Welcome " + name, Toast.LENGTH_SHORT).show();
     }
 }

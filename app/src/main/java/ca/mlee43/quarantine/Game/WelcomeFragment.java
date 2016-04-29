@@ -23,8 +23,6 @@ public class WelcomeFragment extends Fragment implements Button.OnClickListener 
     Button playNowButton;
 
     public interface WelcomeFragmentListener {
-        void onEnterLobby();
-
         void onCreateLobby(String name);
 
         void onJoin(String ip, String name);
@@ -94,7 +92,6 @@ public class WelcomeFragment extends Fragment implements Button.OnClickListener 
         builder.setPositiveButton(R.string.create_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 mListener.onCreateLobby(name);
-                mListener.onEnterLobby();
             }
         })
                 .setNegativeButton(R.string.join, new DialogInterface.OnClickListener() {
@@ -122,7 +119,6 @@ public class WelcomeFragment extends Fragment implements Button.OnClickListener 
                 String ip = ipBox.getText().toString();
                 if (ip != null && !ip.isEmpty()) {
                     mListener.onJoin(ip, name);
-                    mListener.onEnterLobby();
                 } else {
                     Toast.makeText(getActivity(), "You must enter an IP Address!", Toast.LENGTH_SHORT).show();
                 }
